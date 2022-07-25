@@ -16,8 +16,8 @@ spec:
       containers:
         - name: canary-demo
           #image: idanarbel/rollouts-demo:purple
-          image: idanarbel/rollouts-demo:orange
-          #image: idanarbel/rollouts-demo:red
+          #image: idanarbel/rollouts-demo:orange
+          image: idanarbel/rollouts-demo:red
           imagePullPolicy: Always
           ports:
             - name: http
@@ -32,6 +32,6 @@ spec:
       canaryService: canary-demo-preview
       steps:
         - setWeight: 20
-        - pause: {duration: 100}
+        - pause: {duration: 50}
         - setWeight: 60
-        - pause: {duration: 100}
+        - pause: {duration: 50}
